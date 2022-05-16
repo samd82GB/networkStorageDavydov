@@ -1,3 +1,5 @@
+package server;
+
 import handler.JsonDecoder;
 import handler.JsonEncoder;
 import io.netty.bootstrap.ServerBootstrap;
@@ -40,7 +42,7 @@ public class Server {
                                     new JsonEncoder(),
                                     new FirstServerHandler()
                             );
-                            //in -> LineBasedFrameDecoder -> JsonObjectDecoder -> FirstServerHandler
+                            //in -> LineBasedFrameDecoder -> JsonObjectDecoder -> server.FirstServerHandler
                             //JsonObjectEncoder -> out
                         }
                     })
@@ -49,7 +51,7 @@ public class Server {
 
             Channel channel = server.bind(port).sync().channel();
 
-            System.out.println("Server started");
+            System.out.println("server.Server started");
             channel.closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();

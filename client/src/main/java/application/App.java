@@ -8,18 +8,15 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 
 public class App extends Application {
-
-
-
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/networkStorageMainScreen.fxml"));
+//       Parent root = FXMLLoader.load(getClass().getResource("fxml/1.fxml"));
         primaryStage.show();
-        primaryStage.setScene(new Scene(root));
+//        primaryStage.setScene(new Scene(root));
 
     }
 }
